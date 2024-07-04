@@ -2,7 +2,6 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Resources\ClientResource\Widgets\ClientsCard;
 use App\Filament\Resources\UserResource\Widgets\UsersCard;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Http\Middleware\Authenticate;
@@ -60,6 +59,10 @@ class AdminPanelProvider extends PanelProvider
             ->plugins([
                 FilamentShieldPlugin::make()
             ])
+            ->brandName('BB Rewards')
+            ->brandLogo(asset('logo.png'))
+            ->brandLogoHeight('50px')
+            ->favicon(asset('logo.png'))
             ->spa();
     }
 }

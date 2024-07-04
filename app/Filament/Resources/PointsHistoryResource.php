@@ -52,7 +52,11 @@ class PointsHistoryResource extends Resource
                     ->searchable()
                     ->required(),
 
-                TextInput::make('transaction_type')
+                Select::make('transaction_type')
+                    ->options([
+                        'credit' => 'Credit',
+                        'debit' => 'Debit',
+                    ])
                     ->required(),
 
                 TextInput::make('points')

@@ -3,6 +3,8 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ClientResource\Pages;
+use App\Filament\Resources\ClientResource\RelationManagers\FidelityPointRelationManager;
+use App\Filament\Resources\ClientResource\RelationManagers\PointsHistoriesRelationManager;
 use App\Models\Client;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
@@ -51,7 +53,6 @@ class ClientResource extends Resource
                 FileUpload::make('avatar')
                     ->columnSpanFull()
                     ->avatar()
-                    ->maxSize(1024)
                     ->alignCenter(),
 
                 Placeholder::make('created_at')
@@ -115,22 +116,27 @@ class ClientResource extends Resource
                 TextColumn::make('first_name')
                     ->sortable()
                     ->limit(10)
+                    ->copyable()
                     ->searchable(),
 
                 TextColumn::make('last_name')
+                    ->copyable()
                     ->sortable()
                     ->limit(10)
                     ->searchable(),
 
 
                 TextColumn::make('email')
+                    ->copyable()
                     ->limit(20)
                     ->searchable(),
 
                 TextColumn::make('phone')
+                    ->copyable()
                     ->searchable(),
 
                 TextColumn::make('registration_date')
+                    ->copyable()
                     ->date(),
             ])
             ->filters([
@@ -205,5 +211,10 @@ class ClientResource extends Resource
         return ['email'];
     }
 
-
+    public static function getRelations(): array
+    {
+        return [
+            PointsHistoriesRelationManager::class
+        ];
+    }
 }
