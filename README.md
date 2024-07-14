@@ -71,30 +71,15 @@ Suivez ces étapes pour installer et configurer l'application en local :
    npm run build
    ```
 
-## Configuration de FilamentPHP
+## Configuration des roles
 
-FilamentPHP v3 est utilisé pour l'interface d'administration. Voici comment le configurer :
+Shield est utilisé pour pour gerer les droits d'acces. Voici comment le configurer :
 
-1. **Publier les configurations de Filament :**
-
-   ```bash
-   php artisan filament:install
+1. **Suivez les instructions pour créer un utilisateur administrateur.**
+    ```bash
+   php artisan shield:install
    ```
 
-2. **Créer un utilisateur admin pour accéder à Filament :**
-
-   ```bash
-   php artisan make:filament-user
-   ```
-
-   Suivez les instructions pour créer un utilisateur administrateur.
-
-3. **Installer les dépendances npm et compiler les assets :**
-
-   ```bash
-   npm install
-   npm run build
-   ```
 ## Lancer l'application
 
 Après avoir configuré l'application, vous pouvez la démarrer en utilisant la commande suivante :
@@ -103,37 +88,44 @@ Après avoir configuré l'application, vous pouvez la démarrer en utilisant la 
 php artisan serve
 ```
 
-L'application sera accessible à l'adresse suivante : `http://localhost:8000`.
+L'application sera accessible à l'adresse suivante : `http://localhost:8000/admin`.
+
+```text
+username: admin@brain-booster.com
+password: password
+```
 
 ## Captures d'écran
 
 Voici quelques captures d'écran de l'application :
 
 ### Page de connexion
-![Page de connexion](path/to/screenshot1.png)
+
+<img alt="Page de connexion" src="./screenshots/Screenshot 2024-07-04 at 07-29-43 Login - BB Rewards.png" title="Login"/>
 
 ### Tableau de bord
-![Tableau de bord](path/to/screenshot2.png)
+
+<img alt="Tableau de bord" src="./screenshots/Screenshot 2024-07-04 at 07-30-22 Dashboard - BB Rewards.png" title="Dashboard"/>
 
 ### Gestion des utilisateurs
-![Gestion des utilisateurs](path/to/screenshot3.png)
 
-### Exemple de fonctionnalité spécifique
-![Exemple de fonctionnalité](path/to/screenshot4.png)
+<img alt="Gestion des utilisateurs" src="./screenshots/Screenshot 2024-07-04 at 07-31-37 Users - BB Rewards.png" title="Users"/>
 
-## Déploiement
+<img alt="Voir les details sur un utilisateur" src="./screenshots/Screenshot 2024-07-04 at 07-31-50 View User - BB Rewards.png" title="User View"/>
 
-Pour déployer l'application en production, assurez-vous de suivre les bonnes pratiques de déploiement Laravel, notamment :
+### Gestion des roles utilisateurs
 
-- Configurer correctement votre fichier `.env` pour l'environnement de production.
-- Mettre en place un serveur web comme Nginx ou Apache.
-- Configurer une base de données en production.
-- Utiliser des outils de déploiement comme Envoyer ou Forge pour automatiser le déploiement.
+<img alt="Les roles" src="./screenshots/Screenshot 2024-07-04 at 07-31-59 Roles - BB Rewards.png" title="Roles"/>
 
-## Contribuer
+<img alt="Editer les privilleges d&#39;un roles" src="./screenshots/Screenshot 2024-07-04 at 07-32-07 Edit super_admin - BB Rewards.png" title="Edit Roles"/>
 
-Les contributions sont les bienvenues ! Si vous avez des suggestions, des problèmes ou des améliorations, n'hésitez pas à ouvrir une issue ou à soumettre une pull request.
+### Gestion des clients
 
-## Licence
+<img alt="Liste des clients" src="./screenshots/Screenshot 2024-07-04 at 07-30-31 Clients - BB Rewards.png" title="Clients"/>
 
-Ce projet est sous licence [Votre Licence]. Voir le fichier `LICENSE` pour plus de détails.
+<img alt="Liste des clients" src="./screenshots/Screenshot 2024-07-04 at 07-32-28 Clients - BB Rewards.png" title="Clients"/>
+
+<img alt="Information sur le client" src="./screenshots/Screenshot 2024-07-04 at 07-30-54 Clients - BB Rewards.png" title="Client details"/>
+
+<img alt="Modifier les informations d&#39;un client" src="./screenshots/Screenshot 2024-07-04 at 07-31-02 Edit Client - BB Rewards.png" title="Edit client"/>
+

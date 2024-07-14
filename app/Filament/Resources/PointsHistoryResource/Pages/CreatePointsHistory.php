@@ -33,10 +33,10 @@ class CreatePointsHistory extends CreateRecord
             }
         } catch (ModelNotFoundException $exception) {
             // Create a new record if the client_id does not exist
-            FidelityPoint::create(
-                ['client_id' => $data['client_id']],
-                ['balance' => $data['points']]
-            );
+            FidelityPoint::create([
+                'client_id' => $data['client_id'],
+                'balance' => $data['points']
+            ]);
         }
 
         return static::getModel()::create($data);

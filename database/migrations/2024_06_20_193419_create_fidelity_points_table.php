@@ -11,7 +11,7 @@ return new class extends Migration {
         Schema::create('fidelity_points', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Client::class)->constrained('clients');
-            $table->integer('balance');
+            $table->integer('balance')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });
